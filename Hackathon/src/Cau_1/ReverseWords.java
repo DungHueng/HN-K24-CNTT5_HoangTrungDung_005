@@ -8,13 +8,22 @@ public class ReverseWords {
         System.out.println("Nhập chuỗi: ");
         String input = sc.nextLine();
 
-        String[] words = input.split("\\s+");
+        String[] words = input.split(" ");
         StringBuilder sb = new StringBuilder();
-        for (int i = words.length - 1; i >= 0; i--) {
-            sb.append(words[i]);
-            if (i != words.length - 1) {}
+
+        for (int i = 0; i < words.length; i++) {
+            String word = words[i];
+            String reversed = "";
+
+            for (int j = word.length() - 1; j >= 0; j--) {
+                reversed += word.charAt(j);
+            }
+            sb.append(reversed);
+            if (i != words.length - 1) {
+                sb.append(" ");
+            }
         }
-        System.out.println("Chuỗi sau khi xử lý");
+        System.out.println("Chuỗi sau khi xử lý: ");
         System.out.println(sb.toString());
     }
 }
